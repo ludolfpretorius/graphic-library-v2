@@ -1,0 +1,78 @@
+$black: #2e2e2e;
+$navy: #002b54;
+$blue: #448AFF;
+$green: #3BDAA0;
+$red: #EF5350;
+$boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+$animateFast: all 0.2s ease;
+$animateSlow: all 0.4s ease;
+$animateBack: all 0.4s cubic-bezier(0.6, 0.41, 0.29, 1.65);
+
+#AppSidebar {
+	flex-shrink: 0;
+	width: 260px;
+	height: 100vh;
+	background-color: $navy;
+	border-radius: 0 0 0 0;
+	position: sticky;
+	left: 0;
+	top: 0;
+	transition: $animateFast;
+	// overflow-y: scroll;
+	hr {
+		margin: 25px 0;
+		border-top: none;
+		border-right: none;
+		border-left: none;
+		opacity: 0.1;	
+
+	}
+}
+
+#AppSidebarTitle {
+	padding: 30px 30px 5px;
+	img {
+		width: 100%;
+		margin: auto;
+		display: block;
+	}
+	h3 {
+		margin: 5px 0 0px;
+		font-size: 18px;
+		color: #fff;
+		// text-align: center;
+	}
+}
+
+#AppSidebarMenu {
+	h5 {
+		padding: 0 30px;
+		margin: 20px 0 5px 0;
+		font-size: 12px;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.4);
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		li a {
+			padding: 11px 27px;
+			color: rgba(255, 255, 255, 0.8);
+			font-size: 16px;
+			font-weight: 500;
+			text-decoration: none;
+			display: block;
+			i {
+				width: 15px;
+				margin-right: 10px;
+				text-align: center;
+			}
+			&:hover {
+				background-color: lighten($navy, 5%);
+				color: rgba(255, 255, 255, 1);
+			}
+		}
+	}
+}

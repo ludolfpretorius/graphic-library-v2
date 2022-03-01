@@ -1,0 +1,91 @@
+$black: #2e2e2e;
+$navy: #002b54;
+$blue: #448AFF;
+$green: #3BDAA0;
+$red: #EF5350;
+$boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+$animateFast: all 0.2s ease;
+$animateSlow: all 0.4s ease;
+$animateBack: all 0.4s cubic-bezier(0.6, 0.41, 0.29, 1.65);
+
+#Login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	flex-direction: column;
+}
+
+#LoginTitle {
+	img {
+		width: 470px;
+		margin: 0 0 0 0;
+	}
+	h3 {
+		margin: 15px 0 30px 0;
+		color: $black;
+		font-size: 25px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+}
+
+#LoginForm {
+	width: 400px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	input {
+		height: 60px;
+		width: 100%;
+		padding: 10px 20px;
+		background-color: #fff;
+		border: none;
+		border-radius: 10px;
+		border: 1px solid #ccc;
+		// box-shadow: $boxShadow;
+		outline: 3px solid rgba(68, 138, 255, 0);
+		font-size: 16px;
+		transition: $animateFast;
+		&:focus {
+			outline-color: rgba(68, 138, 255, 0.4);
+		}
+	}
+	button {
+		width: 50px;
+		height: 50px;
+		margin: auto;
+		background-color: transparent;
+		border: none;
+		outline: 3px solid rgba(68, 138, 255, 0);
+		font-size: 20px;
+		color: #3bdaa0;
+		position: absolute;
+		right: 10px;
+		top: 1px;
+		bottom: 0;
+		cursor: pointer;
+		&:focus {
+			outline-color: rgba(68, 138, 255, 0.4);
+		}
+	}
+}
+
+#LoginAlert {
+	width: 380px;
+	padding: 10px 10px;
+	background-color: $red;
+	border-radius: 10px;
+	color: #fff;
+	font-weight: 600;
+	text-align: center;
+	display: block;
+	opacity: 0;
+	transition: $animateBack;
+	transform: translateY(20px);
+	&.show {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

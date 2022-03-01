@@ -1,0 +1,45 @@
+// @import url('https://fonts.googleapis.com/css?family=Sen:400,700&display=swap');
+
+$navy: #002b54;
+$blue: #448AFF;
+$green: #3BDAA0;
+$red: #EF5350;
+
+::selection {color: #fff; background: #1475D4;}
+::-webkit-scrollbar {width: 10px; background-color: #f8f6f8;}
+::-webkit-scrollbar-track {background-color: transparent!important;}
+::-webkit-scrollbar-track-piece {background-color: transparent!important;}
+::-webkit-scrollbar-thumb {border-radius: 10px; background-color: #dbdbdb;}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f6f8;
+  font-family: Sen, Arial, sans-serif;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // overflow-x: hidden;
+}
+
+.disable {color: #ccc!important;
+  * {pointer-events: none;}
+}
+
+.btn {
+  width: 200px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 10px;
+  outline: 0px solid rgba(68, 138, 255, 0.4);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+

@@ -1,0 +1,468 @@
+[
+    {
+        "id": 1,
+        "name": "UC Berkeley",
+        "acronym": "BER",
+        "courses": [
+            "ART",
+            "DSE",
+            "MCL"
+        ],
+        "schools": []
+    },
+    {
+        "id": 2,
+        "name": "Cambridge",
+        "acronym": "CAM",
+        "courses": [
+            "BSM",
+            "HIL",
+            "INF",
+            "SUF",
+            "SUP",
+            "WLC"
+        ],
+        "schools": []
+    },
+    {
+        "id": 3,
+        "name": "Dayton",
+        "acronym": "DAY",
+        "courses": [
+            "LDE",
+            "PRO"
+        ],
+        "schools": []
+    },
+    {
+        "id": 4,
+        "name": "UCT Graduate School of Business",
+        "acronym": "GSB",
+        "courses": [
+            "BUS",
+            "VBL"
+        ],
+        "schools": []
+    },
+    {
+        "id": 5,
+        "name": "George Washington University",
+        "acronym": "GWU",
+        "courses": [
+            "HLM",
+            "PME",
+            "SCO",
+            "SPO"
+        ],
+        "schools": []
+    },
+    {
+        "id": 6,
+        "name": "Harvard",
+        "acronym": "HAR",
+        "courses": [
+            "BOK",
+            "CRS",
+            "CYB",
+            "FIH",
+            "GHD"
+        ],
+        "schools": [
+            "BOK",
+            "VPAL"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "London School of Economics and Political Science",
+        "acronym": "LSE",
+        "courses": [
+            "AFW",
+            "BEP",
+            "CRY",
+            "CSI",
+            "DAM",
+            "DIT",
+            "DML",
+            "FIM",
+            "HEP",
+            "LGD",
+            "MAN",
+            "MFE",
+            "MNL",
+            "PPA",
+            "PRE",
+            "PRN",
+            "RCH",
+            "RCR",
+            "REF",
+            "TED",
+            "UDIS",
+            "LEC",
+            "PPI",
+            "IDE"
+        ],
+        "schools": []
+    },
+    {
+        "id": 8,
+        "name": "Miscellaneous",
+        "acronym": "MISC",
+        "courses": [],
+        "schools": []
+    },
+    {
+        "id": 9,
+        "name": "Massachusetts Institute of Technology",
+        "acronym": "MIT",
+        "courses": [
+            "AHC",
+            "AI",
+            "AMS",
+            "BLC",
+            "BPD",
+            "BSC",
+            "CFE",
+            "CPS",
+            "CRI",
+            "CRP",
+            "DBS",
+            "DSR",
+            "DTM",
+            "ENB",
+            "FMT",
+            "HXD",
+            "INN",
+            "IOT",
+            "ITS",
+            "MAC",
+            "MAS",
+            "ML",
+            "NUR",
+            "PRS",
+            "SL",
+            "WRK"
+        ],
+        "schools": [
+            "Sloan",
+            "SA+P",
+            "CSAIL",
+            "Media Lab"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Northwestern University",
+        "acronym": "NU",
+        "courses": [
+            "BUL",
+            "CBL",
+            "CX",
+            "DIN",
+            "DOP",
+            "DVT",
+            "MAR",
+            "MRT",
+            "REI",
+            "STC",
+            "STT",
+            "BRM",
+            "ELF",
+            "EFI"
+        ],
+        "schools": [
+            "NU",
+            "Kellogg"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Oxford",
+        "acronym": "OXF",
+        "courses": [
+            "AIM",
+            "ALG",
+            "ARI",
+            "BCH",
+            "CLM",
+            "DIG",
+            "EFP",
+            "ENT",
+            "FIN",
+            "INO",
+            "LSC",
+            "LSP",
+            "MNB",
+            "OEP",
+            "SAP",
+            "STA",
+            "WML"
+        ],
+        "schools": []
+    },
+    {
+        "id": 12,
+        "name": "Rice",
+        "acronym": "RICE",
+        "courses": [
+            "BDO",
+            "DAV",
+            "RED",
+            "SPM"
+        ],
+        "schools": [
+            "Jones",
+            "Glasscock"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Stanford",
+        "acronym": "STAN",
+        "courses": [
+            "ABB",
+            "EXP",
+            "NUT",
+            "PDR",
+            "TEL",
+            "WEL",
+            "CDP"
+        ],
+        "schools": []
+    },
+    {
+        "id": 14,
+        "name": "Syracuse",
+        "acronym": "SYR",
+        "courses": [
+            "FNM",
+            "PMN",
+            "WIB"
+        ],
+        "schools": []
+    },
+    {
+        "id": 15,
+        "name": "Tecnol\u00f3gico de Monterrey",
+        "acronym": "TEC",
+        "courses": [
+            "LEA"
+        ],
+        "schools": []
+    },
+    {
+        "id": 16,
+        "name": "Trilogy Ed",
+        "acronym": "TRI",
+        "courses": [
+            "DON",
+            "FSO",
+            "FTO"
+        ],
+        "schools": []
+    },
+    {
+        "id": 17,
+        "name": "UC Davis",
+        "acronym": "UCD",
+        "courses": [
+            "LPR",
+            "NEG"
+        ],
+        "schools": []
+    },
+    {
+        "id": 18,
+        "name": "University of Cape Town",
+        "acronym": "UCT",
+        "courses": [
+            "ACC",
+            "AGP",
+            "AHR",
+            "AOM",
+            "APM",
+            "ARM",
+            "BAN",
+            "BDC",
+            "BDM",
+            "BK",
+            "BSA",
+            "BSD",
+            "BW",
+            "CBS",
+            "CCL",
+            "CED",
+            "CES",
+            "CHM",
+            "CIN",
+            "CMA",
+            "COM",
+            "CON",
+            "CP",
+            "CPB",
+            "CPL",
+            "DA",
+            "DII",
+            "DM",
+            "DP",
+            "DSS",
+            "EES",
+            "EM",
+            "EXS",
+            "FBM",
+            "FCM",
+            "FEC",
+            "FIP",
+            "FM",
+            "FMA",
+            "FTE",
+            "FW",
+            "GD",
+            "HR",
+            "IEM",
+            "ISM",
+            "ITM",
+            "IVM",
+            "MA",
+            "MRS",
+            "MTP",
+            "NCR",
+            "OHS",
+            "OM",
+            "PAR",
+            "PBM",
+            "PCM",
+            "PDI",
+            "PDM",
+            "PFR",
+            "PLL",
+            "PM",
+            "PMG",
+            "PR",
+            "PRG",
+            "PSS",
+            "PTA",
+            "RM",
+            "RTM",
+            "SCM",
+            "SEO",
+            "SM",
+            "SMA",
+            "SMB",
+            "SMG",
+            "STM",
+            "TDM",
+            "TWT",
+            "TXL",
+            "UXD",
+            "WDS"
+        ],
+        "schools": []
+    },
+    {
+        "id": 19,
+        "name": "University of Stellenbosch Business School",
+        "acronym": "USB",
+        "courses": [
+            "ESS",
+            "WIL"
+        ],
+        "schools": []
+    },
+    {
+        "id": 20,
+        "name": "Yale",
+        "acronym": "YALE",
+        "courses": [
+            "BEL",
+            "CSS",
+            "GBP",
+            "GVT",
+            "HMG",
+            "LDT",
+            "MMB",
+            "NGT",
+            "SDM",
+            "SMR",
+            "WLP",
+            "LGC"
+        ],
+        "schools": []
+    },
+    {
+        "id": 21,
+        "name": "The Economist",
+        "acronym": "ECON",
+        "courses": [
+            "INR",
+            "BSW"
+        ],
+        "schools": []
+    },
+    {
+        "id": 22,
+        "name": "Learning Experience Framework",
+        "acronym": "LXF",
+        "courses": [
+            "Group 1",
+            "Group 2",
+            "Group 3",
+            "Group 4",
+            "Group 5"
+        ],
+        "schools": []
+    },
+    {
+        "id": 23,
+        "name": "IMD Business School",
+        "acronym": "IMD",
+        "courses": [
+            "DDS",
+            "DCH"
+        ],
+        "schools": []
+    },
+    {
+        "id": 24,
+        "name": "Bocconi",
+        "acronym": "BOC",
+        "courses": [
+            "GMP",
+            "SLM",
+            "STF"
+        ],
+        "schools": []
+    },
+    {
+        "id": 25,
+        "name": "University of Toronto",
+        "acronym": "UTOR",
+        "courses": [
+            "FTC",
+            "HAL",
+            "ORL",
+            "WOL"
+        ],
+        "schools": []
+    },
+    {
+        "id": 26,
+        "name": "GetSmarter",
+        "acronym": "GS",
+        "courses": [
+            "WBGS"
+        ],
+        "schools": []
+    },
+    {
+        "id": 27,
+        "name": "National University of Singapore",
+        "acronym": "NUS",
+        "courses": [
+            "PRM",
+            "CMG",
+            "XDS"
+        ],
+        "schools": []
+    }
+]
