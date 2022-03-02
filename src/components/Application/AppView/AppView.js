@@ -4,11 +4,11 @@ import './AppView.scss'
 import AppViewSearch from './AppViewSearch'
 import AppViewContent from './AppViewContent'
 
-const AppView = ({ setIsUploading }) => {
+const AppView = ({ isUploading, setIsUploading, initUpload }) => {
 	return (
 		<div id="AppView">
 			<AppViewSearch />
-			<AppViewContent setIsUploading={bool => setIsUploading(bool)} />
+			<AppViewContent isUploading={isUploading} setIsUploading={bool => setIsUploading(bool)} initUpload={initUpload} />
 		</div>
 	)
 }

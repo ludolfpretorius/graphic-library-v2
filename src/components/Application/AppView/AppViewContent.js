@@ -8,7 +8,7 @@ import VisibleImagesContext from '../../../state/contexts/VisibleImagesContext'
 import AppViewContentDropzone from './AppViewContentDropzone'
 const AppViewContentThumbnail = React.lazy(() => import('./AppViewContentThumbnail'))
 
-const AppViewContent = ({ setIsUploading }) => {
+const AppViewContent = ({ isUploading, setIsUploading, initUpload }) => {
 	const { images } = useContext(ImagesContext)
 	const { filteredImages, setFilteredImages } = useContext(FilteredImagesContext)
 	const { visibleImages, setVisibleImages } = useContext(VisibleImagesContext)
@@ -25,7 +25,10 @@ const AppViewContent = ({ setIsUploading }) => {
 					hasMore={filteredImages.length > visibleImages.length}
 					loader={<AppViewContentLoader />}
 					endMessage={null} >
-						<AppViewContentDropzone setIsUploading={bool => setIsUploading(bool)}/>						
+						<AppViewContentDropzone 
+							isUploading={isUploading}
+							setIsUploading={bool => setIsUploading(bool)}
+							initUpload={initUpload} />						
 						{visibleImages.map(img => {
 							return <AppViewContentThumbnail img={img} key={img.id} />
 						})}

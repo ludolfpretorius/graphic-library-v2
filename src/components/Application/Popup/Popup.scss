@@ -20,6 +20,8 @@ $animateBack: all 0.4s cubic-bezier(0.6, 0.41, 0.29, 1.65);
 	visibility: hidden;
 	pointer-events: none;
 	transition: $animateSlow;
+    overflow: auto;
+    overflow-x: hidden;
 	&.show {
 		opacity: 1;
 		visibility: visible;

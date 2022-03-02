@@ -37,7 +37,7 @@ const AppThumbnail = ({ img }) => {
 						</div>
 					</div>
 				</div>
-				<a className="menu-btn download-btn" href={img.url} download={img.tags.join('-')}>
+				<a className="menu-btn download-btn" href={require(`../../../../upload/${img.url}.svg`)} download={img.tags.join('-') + '.svg'}>
 					<i className="fas fa-download"></i>
 				</a>
 			</div>

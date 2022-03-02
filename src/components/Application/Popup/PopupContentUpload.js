@@ -8,7 +8,7 @@ import fetchTags from '../../../state/utils/fetchTags'
 import ImagesContext from '../../../state/contexts/ImagesContext'
 // import UniPartnersContext from '../../../state/contexts/FilteredImagesContext'
 
-const PopupContentUpload = ({ setIsUploading }) => {
+const PopupContentUpload = ({ setIsUploading, setInitUpload }) => {
 	const { images } = useContext(ImagesContext)
 
 	const [ unies, setUnies ] = useState([])
@@ -112,7 +112,7 @@ const PopupContentUpload = ({ setIsUploading }) => {
 			</div>
 			<div className="buttons">
 				<div className="btn cancel" onClick={() => setIsUploading(false)}>Cancel</div>
-				<div className="btn upload">Upload</div>
+				<div className="btn upload" onClick={() => setInitUpload(true)}>Upload</div>
 			</div>
 		</div>
 	)

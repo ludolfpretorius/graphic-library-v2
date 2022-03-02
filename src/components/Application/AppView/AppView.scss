@@ -3,6 +3,7 @@ $navy: #002b54;
 $blue: #448AFF;
 $green: #3BDAA0;
 $red: #EF5350;
+$backgroundGrey: #f8f6f8;
 $greyBorder: #aaa;
 $boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
 $animateFast: all 0.2s ease;
@@ -143,10 +144,36 @@ $animateBack: all 0.4s cubic-bezier(0.6, 0.41, 0.29, 1.65);
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	cursor: pointer;
 	div[role="button"] {
 		height: 100%;
 		padding: 4px;
 		display: flex;
+	}
+	.thumb-preview {
+		width: 100%;
+		height: 100%;
+		margin: auto;
+		background-color: $backgroundGrey;
+		border-radius: 20px;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		pointer-events: none;
+		overflow: hidden;
+		img {
+			flex: 0 1 auto;
+			width: 60%;
+			height: auto;
+		}
+		&.show-preview {
+			display: flex;
+		}
 	}
 	.dropzone-content {
 		display: flex;
@@ -251,7 +278,7 @@ $animateBack: all 0.4s cubic-bezier(0.6, 0.41, 0.29, 1.65);
 					display: flex;
 					cursor: pointer;
 					&:hover {
-						background-color: #f8f6f8;
+						background-color: $backgroundGrey;
 					}
 					i {
 						margin-right: 8px;
