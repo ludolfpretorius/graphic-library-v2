@@ -1,11 +1,12 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
+import uploadImage from '../../../state/utils/uploadImage'
 
 import img from '../../../assets/imgs/img.svg'
 
-const AppViewContentDropzone = ({ isUploading, setIsUploading, initUpload }) => {
-	const [ files, setFiles ] = useState([])	
+const AppViewContentDropzone = ({ isUploading, setIsUploading, imgInfo, initUpload }) => {
+	const [ files, setFiles ] = useState([])
 
 	useEffect(() => () => {
 		files.forEach(file => URL.revokeObjectURL(file.preview));
@@ -20,7 +21,8 @@ const AppViewContentDropzone = ({ isUploading, setIsUploading, initUpload }) => 
 	useEffect(() => {
 		if (initUpload) {
 			console.log('uploading...')
-			uploadFiles(files)
+			console.log(imgInfo)
+			processFiles(files, imgInfo)
 		}
 	}, [initUpload])
 
@@ -28,28 +30,27 @@ const AppViewContentDropzone = ({ isUploading, setIsUploading, initUpload }) => 
 		setIsUploading(true)
 		setFiles(acceptedFiles.map(file => Object.assign(file, {
 			preview: URL.createObjectURL(file),
-			info: {
-				up: '',
-				course: '',
-				tags: []
-			}
 		})))
 	}, [])
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		onDrop,
-		accept: 'image/svg+xml'
+		accept: 'image/svg+xml',
+		minSize: 0,
+		maxSize: 1000000
 	})
 
-	const uploadFiles = (fileArray) => {
+	const getInfo = (info) => {
+		return JSON.stringify(info)
+	}
+
+	const processFiles = (fileArray, imgInfo) => {
 		const formData = new FormData()
-		// formData.append('files', JSON.stringify(files))
-		files.forEach((file, i) => {
-			formData.append('file' + i+1, file)
+		formData.append('path', 'images/uploadImage')
+		formData.append('info', getInfo(imgInfo))
+		fileArray.forEach((file, i) => {
+			formData.append('file' + (i+1), file)
 		})
-		
-		for (let i of formData.keys()) {
-			console.log(i, formData.get(i))
-		}
+		uploadImage(formData)
 	}
 	
 	const dragResponses = ['Upload image here', 'You going to upload something or not?', 'You\'re supposed to upload stuff, you know', 'Onion rings are just vegetable donuts', 'I’d give you a cookie, but I ate it', 'C is for cookie. That’s good enough for me.', 'Upload image here', 'Gimme SVGEEEZ!!!', 'Upload something... I dare you.']

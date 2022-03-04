@@ -8,7 +8,7 @@ import fetchTags from '../../../state/utils/fetchTags'
 import ImagesContext from '../../../state/contexts/ImagesContext'
 // import UniPartnersContext from '../../../state/contexts/FilteredImagesContext'
 
-const PopupContentUpload = ({ setIsUploading, setInitUpload }) => {
+const PopupContentUpload = ({ setIsUploading, setImgInfo, setInitUpload }) => {
 	const { images } = useContext(ImagesContext)
 
 	const [ unies, setUnies ] = useState([])
@@ -18,6 +18,7 @@ const PopupContentUpload = ({ setIsUploading, setInitUpload }) => {
 
 	const [ selectedUni, setSelectedUni ] = useState('')
 	const [ selectedCourse, setSelectedCourse ] = useState('')
+	const [ selectedTags, setSelectedTags ] = useState([])
 	
 	useEffect(() => {
 		fetchUniPartners()
@@ -35,6 +36,15 @@ const PopupContentUpload = ({ setIsUploading, setInitUpload }) => {
 		maybeClearCourse()
 		setCourses(getCourseNames(unies))
 	}, [selectedUni])
+
+	useEffect(() => {
+		const imgInfo = {
+			up: selectedUni,
+			course: selectedCourse,
+			tags: selectedTags
+		}
+		setImgInfo(imgInfo)
+	}, [selectedUni, selectedCourse, selectedTags])
 
 	const getUniNames = (arr) => {
 		const unies = arr.map(uni => uni.acronym)
@@ -69,6 +79,11 @@ const PopupContentUpload = ({ setIsUploading, setInitUpload }) => {
 		}
 	}
 
+	const captureTags = (data) => {
+		const tags = data.map(tag => tag.value)
+		setSelectedTags(tags)
+	}
+
 	return (
 		<div id="PopupContentUpload" >
 			{
@@ -86,7 +101,8 @@ const PopupContentUpload = ({ setIsUploading, setInitUpload }) => {
 						name="tags" placeholder={'Add searchable tags'}
 						isMulti={true} isSearchable={true}
 						isClearable={false}
-						options={constructOptions(tags)} />
+						options={constructOptions(tags)} 
+						onChange={tags => captureTags(tags)} />
 				</div>
 				<div className="input-group">
 					<div className="input-wrap">

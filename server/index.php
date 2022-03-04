@@ -3,9 +3,10 @@
 	require './cors.php';
 	cors();
 
-	$req = getRequestData();
+	$req = $_POST['path'] ? $_POST : getRequestData();
 	$token = getBearerToken();
-
+	
+	
 	if (!$req || $token !== 'c8ce9fe80d96063b79743a61cd68ed7ebf95') {
 		exit('Error: 403 (Tsek!)');
 	}
