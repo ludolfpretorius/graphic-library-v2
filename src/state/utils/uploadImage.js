@@ -10,8 +10,7 @@ const uploadImage = async (formData) => {
 		console.error(err)
 	})
 	const data = await resp.json()
-	console.log(data)
-	return await data.body
+	return await data
 }
 
 export default uploadImage

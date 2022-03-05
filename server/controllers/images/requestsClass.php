@@ -28,28 +28,30 @@
             }
 
 			$successfullyMoved = false;
+			$successfullyUploaded = false;
 			$filename = '';
 			foreach ($_FILES as $key => $file) {
 				$folder = $this->imagesFolder;
 				$filename = $this->createRandomString();
-				$location = $folder_name.$filename.'.svg';
-				$successfullyMoved = move_uploaded_file($_FILES['file1']['tmp_name'], $location);
-			}
-			
-			if ($successfullyMoved) {
-				$imagesLength = count(json_decode(file_get_contents($this->imagesFile)));
-				$uploadedInfo = json_decode($req['info']);
-				$imageEntry = [];
-				$imageEntry['id'] = $imagesLength + 2;
-				foreach($uploadedInfo as $key => $value) {
-					$imageEntry[$key] = $value;
+				$location = $folder.$filename.'.svg';
+				$successfullyMoved = move_uploaded_file($_FILES[$key]['tmp_name'], $location);
+				if ($successfullyMoved) {
+					$imagesLength = count(json_decode(file_get_contents($this->imagesFile)));
+					$uploadedInfo = json_decode($req['info']);
+					$imageEntry = [];
+					$imageEntry['id'] = $imagesLength + 2;
+					foreach($uploadedInfo as $type => $value) {
+						$imageEntry[$type] = $value;
+					}
+					$imageEntry['url'] = $filename;
+					$successfullyUploaded = writeToJsonFile($this->imagesFile, $imageEntry);
 				}
-				$imageEntry['url'] = $filename;
-				writeToJsonFile($this->imagesFile, $imageEntry);
-				$allImages = $this->fetchAll();
-				return $allImages; 
 			}
 
+			if ($successfullyUploaded) {
+				$allImages = $this->fetchAll();
+				return $allImages;
+			}
 			return null;
 		}
 	}

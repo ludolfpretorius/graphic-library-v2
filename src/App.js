@@ -31,7 +31,7 @@ function App() {
   
   return (
     <Router>
-      <ImagesContext.Provider value={{ images }}>
+      <ImagesContext.Provider value={{ images, setImages }}>
         <FilteredImagesContext.Provider value={{ filteredImages, setFilteredImages }}>
           <VisibleImagesContext.Provider value={{ visibleImages, setVisibleImages }}>
            {/* <UniPartnersContext.Provider value={{ uniPartners, setUniPartners }}>*/}

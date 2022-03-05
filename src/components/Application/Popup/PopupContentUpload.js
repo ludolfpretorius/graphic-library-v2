@@ -8,7 +8,7 @@ import fetchTags from '../../../state/utils/fetchTags'
 import ImagesContext from '../../../state/contexts/ImagesContext'
 // import UniPartnersContext from '../../../state/contexts/FilteredImagesContext'
 
-const PopupContentUpload = ({ setIsUploading, setImgInfo, setInitUpload }) => {
+const PopupContentUpload = ({ setIsUploading, setImgInfo, initUpload, setInitUpload }) => {
 	const { images } = useContext(ImagesContext)
 
 	const [ unies, setUnies ] = useState([])
@@ -74,7 +74,7 @@ const PopupContentUpload = ({ setIsUploading, setImgInfo, setInitUpload }) => {
 	}
 
 	const load = () => {
-		if (!tags.length || !unies.length) {
+		if (!tags.length || !unies.length || initUpload) {
 			return <PopupLoader />
 		}
 	}

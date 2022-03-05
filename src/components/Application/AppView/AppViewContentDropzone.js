@@ -1,11 +1,13 @@
 
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState, useContext } from 'react'
 import { useDropzone } from 'react-dropzone'
 import uploadImage from '../../../state/utils/uploadImage'
+import ImagesContext from '../../../state/contexts/ImagesContext'
 
 import img from '../../../assets/imgs/img.svg'
 
 const AppViewContentDropzone = ({ isUploading, setIsUploading, imgInfo, initUpload }) => {
+	const { images, setImages } = useContext(ImagesContext)
 	const [ files, setFiles ] = useState([])
 
 	useEffect(() => () => {
@@ -20,8 +22,6 @@ const AppViewContentDropzone = ({ isUploading, setIsUploading, imgInfo, initUplo
 
 	useEffect(() => {
 		if (initUpload) {
-			console.log('uploading...')
-			console.log(imgInfo)
 			processFiles(files, imgInfo)
 		}
 	}, [initUpload])
@@ -51,6 +51,14 @@ const AppViewContentDropzone = ({ isUploading, setIsUploading, imgInfo, initUplo
 			formData.append('file' + (i+1), file)
 		})
 		uploadImage(formData)
+			.then(resp => {
+				if (resp.status === 'Success: 200 (Image uploaded)') {
+					setImages(resp.body)
+					setIsUploading(false)
+				} else {
+					alert('Oops! Something went wrong. Please refresh and try again.')
+				}
+			})
 	}
 	
 	const dragResponses = ['Upload image here', 'You going to upload something or not?', 'You\'re supposed to upload stuff, you know', 'Onion rings are just vegetable donuts', 'I’d give you a cookie, but I ate it', 'C is for cookie. That’s good enough for me.', 'Upload image here', 'Gimme SVGEEEZ!!!', 'Upload something... I dare you.']

@@ -16,13 +16,14 @@ const Application = () => {
 				isUploading={isUploading}
 				setIsUploading={bool => setIsUploading(bool)}
 				setImgInfo={imgInfo => setImgInfo(imgInfo)}
+				initUpload={initUpload}
 				setInitUpload={bool => setInitUpload(bool)} />
 			<AppSidebar />
 			<AppView
 				isUploading={isUploading}
 				setIsUploading={bool => setIsUploading(bool)}
 				imgInfo={imgInfo}
-				initUpload={initUpload}/>
+				initUpload={initUpload} />
 		</div>
 	)
 }
